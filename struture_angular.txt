@@ -1,0 +1,95 @@
+my-angular-app/
+├── e2e/
+│   ├── src/
+│   │   ├── app.e2e-spec.ts
+│   │   ├── app.po.ts
+│   ├── tsconfig.json
+├── node_modules/
+├── src/
+│   ├── app/
+│   │   ├── app-routing.module.ts
+│   │   ├── app.component.css
+│   │   ├── app.component.html
+│   │   ├── app.component.spec.ts
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   ├── assets/
+│   ├── environments/
+│   │   ├── environment.prod.ts
+│   │   ├── environment.ts
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── main.ts
+│   ├── polyfills.ts
+│   ├── styles.css
+│   ├── test.ts
+├── .editorconfig
+├── .gitignore
+├── angular.json
+├── package.json
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.spec.json
+├── tslint.json
+
+
+Racine du projet
+node_modules/ : Ce répertoire contient toutes les dépendances Node.js du projet, installées via npm. Il est automatiquement généré lors de l'exécution de npm install.
+
+e2e/ : Ce répertoire contient les fichiers de test end-to-end. Les tests e2e vérifient le comportement de l'application entière du point de vue de l'utilisateur final.
+
+src/ : Contient les spécifications et les fichiers de page objet pour les tests end-to-end.
+tsconfig.json : Fichier de configuration TypeScript spécifique aux tests end-to-end.
+src/ : Ce répertoire contient les fichiers source de l'application Angular.
+
+app/ : Contient les composants, modules, services et autres fichiers relatifs à l'application.
+app-routing.module.ts : Module de routage de l'application, gère les routes de l'application.
+app.component.* : Fichiers relatifs au composant principal de l'application.
+app.component.ts : Fichier TypeScript du composant principal.
+app.component.html : Template HTML du composant principal.
+app.component.css : Styles CSS du composant principal.
+app.component.spec.ts : Fichier de test unitaire du composant principal.
+app.module.ts : Module principal de l'application, qui déclare et importe les composants et modules nécessaires.
+assets/ : Contient les fichiers statiques comme les images, les polices et autres ressources.
+environments/ : Contient les fichiers de configuration des environnements (développement, production, etc.).
+environment.ts : Configuration pour l'environnement de développement.
+environment.prod.ts : Configuration pour l'environnement de production.
+favicon.ico : Icône de la page.
+index.html : Fichier HTML principal de l'application, où le composant Angular principal sera chargé.
+main.ts : Fichier principal qui démarre l'application Angular.
+polyfills.ts : Fichier pour inclure les polyfills nécessaires pour la compatibilité avec différents navigateurs.
+styles.css : Fichier de styles globaux pour l'application.
+test.ts : Fichier de configuration pour les tests unitaires.
+Fichiers de configuration à la racine du projet
+.editorconfig : Fichier de configuration pour l'éditeur de code, définissant des règles de style comme l'indentation et les fins de ligne.
+
+.gitignore : Fichier pour spécifier les fichiers et répertoires à ignorer par Git.
+
+angular.json : Fichier de configuration principal d'Angular CLI, définissant la structure du projet et les options de build.
+
+package.json : Fichier de configuration NPM, listant les dépendances du projet et les scripts de commande.
+
+README.md : Fichier de documentation du projet, souvent utilisé pour donner des instructions sur la configuration et l'utilisation du projet.
+
+tsconfig.app.json : Fichier de configuration TypeScript spécifique à l'application Angular.
+
+tsconfig.json : Fichier de configuration TypeScript global.
+
+tsconfig.spec.json : Fichier de configuration TypeScript spécifique aux tests unitaires.
+
+tslint.json : Fichier de configuration pour TSLint, l'outil de linting pour TypeScript (note : TSLint est en cours de dépréciation au profit d'ESLint).
+
+En résumé
+node_modules/ : Dépendances du projet.
+e2e/ : Tests end-to-end.
+src/ : Fichiers source de l'application.
+app/ : Composants, modules et services.
+assets/ : Fichiers statiques.
+environments/ : Configurations d'environnement.
+index.html : Fichier HTML principal.
+main.ts : Démarrage de l'application.
+styles.css : Styles globaux.
+angular.json : Configuration Angular CLI.
+package.json : Dépendances et scripts NPM.
+tsconfig.json : Configuration TypeScript.
