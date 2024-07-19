@@ -1,0 +1,1 @@
+Test de simulation pour s'assurer que tout fonctionne parfaitement.
