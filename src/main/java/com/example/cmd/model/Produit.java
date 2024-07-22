@@ -18,6 +18,7 @@ public class Produit {
     private String description;
     private Float prix;
     private int quantite;
+    private String libelle;
     LocalDate date = LocalDate.now();
 
     @ManyToOne
@@ -33,17 +34,17 @@ public class Produit {
     @OneToMany(mappedBy = "produit", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Variante> variantes;
 
-    public Produit(String description,  Long id_category, Float prix, int quantite, Utilisateur utilisateur) {
-        this.description = description;
-        this.id_category = id_category;
-        this.prix = prix;
-        this.quantite = quantite;
-        this.utilisateur = utilisateur;
-    }
-
-    public Produit() {
-
-    }
+//    public Produit(String description,  Long id_category, Float prix, int quantite, Utilisateur utilisateur) {
+//        this.description = description;
+//        this.id_category = id_category;
+//        this.prix = prix;
+//        this.quantite = quantite;
+//        this.utilisateur = utilisateur;
+//    }
+//
+//    public Produit() {
+//
+//    }
 
     public void addVariante(Variante variante) {
         variantes.add(variante);

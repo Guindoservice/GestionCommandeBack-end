@@ -235,6 +235,32 @@ public class AdminController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erreur lors de l'ajout du produit: " + e.getMessage());
         }
     }
+
+    // Endpoint pour modifier un produit existant
+    @PutMapping("/modifierProduit/{id}")
+    public String modifierProduit(@PathVariable Long id, @RequestBody Produit produitDetails) {
+        return produitService.modifierProduit(id, produitDetails);
+    }
+
+    // Endpoint pour ajouter de la quantité à un produit existant
+    @PatchMapping("/{id}/AjoutquantiteProduit")
+    public String ajouterQuantiteProduit(@PathVariable Long id, @RequestParam int quantiteToAdd) {
+        return produitService.ajouterQuantiteProduit(id, quantiteToAdd);
+    }
+
+    // Endpoint pour supprimer un produit
+    @DeleteMapping("supprimerProduit/{id}")
+    public String supprimerProduit(@PathVariable Long id) {
+        return produitService.supprimerProduit(id);
+    }
+
+    // Endpoint pour obtenir tous les produits
+    @GetMapping(path = "/listesProduit")
+    public List<Produit> lireProduits() {
+        return produitService.lireProduits();
+    }
+
+
     }
 
 
