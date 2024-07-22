@@ -1,0 +1,28 @@
+package com.example.cmd.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Entity
+@NoArgsConstructor
+@Table(name="personnel")
+public class Personnel extends Utilisateur {
+
+    private String email;
+
+    @ManyToOne
+    @JoinColumn(name = "admin_id")
+    private Admin admin;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private RoleType role;
+
+    public Personnel(String username, String email, String motDePasse, RoleType roleType, Admin admin) {
+        super(username, email, motDePasse, roleType);
+        this.admin = admin;
+    }
+
+}
