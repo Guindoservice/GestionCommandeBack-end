@@ -3,6 +3,7 @@ package com.example.cmd.controller;
 import com.example.cmd.model.*;
 import com.example.cmd.repository.CategoryRepository;
 import com.example.cmd.repository.UtilisateurRepository;
+import com.example.cmd.service.AvisService;
 import com.example.cmd.service.CategoryService;
 import com.example.cmd.service.ProduitService;
 import com.example.cmd.service.UtilisateurService;
@@ -38,6 +39,8 @@ public class AdminController {
     private CategoryRepository categoryRepository;
     @Autowired
     private ProduitService produitService;
+    @Autowired
+    private AvisService avisService;
 
     // Endpoints pour les rôles
 
@@ -258,6 +261,30 @@ public class AdminController {
     @GetMapping(path = "/listesProduit")
     public List<Produit> lireProduits() {
         return produitService.lireProduits();
+    }
+
+    // Endpoint pour les Avis concernant les produit
+
+    @DeleteMapping("/SupprimerAvis/{id}")
+    public ResponseEntity<String> deleteAvis(@PathVariable Long id) {
+        String message = avisService.supprimerAvis(id);
+        return new ResponseEntity<>(message, HttpStatus.OK);
+    }
+
+    // Récupère la liste des avis associés à un produit spécifié
+
+    @GetMapping("/Avisbyproduit/{produitId}")
+    public ResponseEntity<List<Avis>> getAvisByProduit(@PathVariable Long produitId) {
+        List<Avis> avis = avisService.lireAvisParProduit(produitId);
+        return new ResponseEntity<>(avis, HttpStatus.OK);
+    }
+
+    //Récupère la liste des avis associés à un client
+
+    @GetMapping("/Avisbyclient/{clientId}")
+    public ResponseEntity<List<Avis>> getAvisByClient(@PathVariable Long clientId) {
+        List<Avis> avis = avisService.lireAvisParClient(clientId);
+        return new ResponseEntity<>(avis, HttpStatus.OK);
     }
 
 

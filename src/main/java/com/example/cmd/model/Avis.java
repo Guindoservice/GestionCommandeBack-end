@@ -3,23 +3,23 @@ package com.example.cmd.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.List;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
-public class Panier {
+public class Avis {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @OneToMany
-    private List<ProductDto> produits;
+    private LocalDateTime dateAvis;
+    private String commentaire;
+    private int note; // Par exemple, de 1 à 5 étoiles
 
     @ManyToOne
     private Client client;
 
-    private Double total;
+    @ManyToOne
+    private Produit produit;
 
-    // Getters and Setters
 }

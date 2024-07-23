@@ -11,8 +11,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -208,62 +206,6 @@ public class UtilisateurServiceImpl implements UtilisateurService {
         utilisateurRepository.save(admin);
         return "Admin modifié avec succès!";
     }
-
-//    @Override
-//    @Transactional
-//    public String ajouterProduit(Produit produit) {
-//        Long categoryId = produit.getId_category();
-//        Optional<Category> categoryOptional = categoryRepository.findById(categoryId);
-//
-//        if (categoryOptional.isEmpty()) {
-//            return "La catégorie du produit n'existe pas.";
-//        }
-//
-//        // Associez la catégorie trouvée au produit
-//        produit.setId_category(categoryOptional.get().getId());
-//
-//        // Récupérer l'utilisateur connecté
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        if (authentication == null || !authentication.isAuthenticated()) {
-//            return "Utilisateur non authentifié.";
-//        }
-//        String username = authentication.getName();
-//        Utilisateur utilisateur = utilisateurRepository.findByUsername(username)
-//                .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé"));
-//
-//        produit.setUtilisateur(utilisateur);
-//
-//        // Créer le produit
-//        Produit p = produitRepository.save(produit);
-//
-//        // Créer une entrée dans EntreeSorti
-//        EntreeSorti es = new EntreeSorti();
-//        es.setProduit(p);
-//        es.setDate(new Date());
-//        es.setLibelle("Entrée");
-//        es.setQuantite(p.getQuantite());
-//        entreeSortiServiceImp.creer(es);
-//
-//        // Ajouter au stock
-//        stockService.ajouterProduit(p);
-//
-//        // Ajouter un historique
-//        historiqueService.addCREATIONhistorique(p.getUtilisateur(), "Produit(id:" + p.getId() + ")");
-//
-//        return "Produit ajouté avec succès!";
-//    }
-//
-//    @Override
-//    public List<Produit> lireProduit() {
-//        return produitRepository.findAll();
-//    }
-//
-//    @Override
-//    public String supprimerProduit(Long id) {
-//        produitRepository.deleteById(id);
-//        return "Produit supprimer!!!";
-//    }
-
 
     @Override
     public String assignerCommandeALivreur(Long commandeId, Long livreurId) {
